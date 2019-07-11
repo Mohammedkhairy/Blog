@@ -22,31 +22,26 @@
         <form class="form-inline ml-3">
           <div class="input-group input-group-sm">
             <input class="form-control form-control-navbar" type="search" placeholder="بحث" aria-label="Search">
-            <div class="input-group-append">
-              <button class="btn btn-navbar" type="submit">
-                <i class="fas fa-search"></i>
-              </button>
-            </div>
           </div>
         </form>
 
         <li class="nav-item d-none d-sm-inline-block">
-                  <router-link to="/home" class="btn btn-primary border-left ">الصفحه الرئيسيه</router-link>
+                  <router-link to="/home"    class="btn btn-primary border-left ">الصفحه الرئيسيه</router-link>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
                   <router-link to="/example" class="btn btn-primary border-left ">الصفحه الرئيسيه</router-link>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-                  <router-link to="/example" class="btn btn-primary border-left ">الصفحه الرئيسيه</router-link>
+                  <router-link to="/example1" class="btn btn-primary border-left ">الصفحه الرئيسيه</router-link>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-                  <router-link to="/example" class="btn btn-primary border-left ">الصفحه الرئيسيه</router-link>
+                  <router-link to="/example2" class="btn btn-primary border-left ">الصفحه الرئيسيه</router-link>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-                  <router-link to="/example" class="btn btn-primary border-left ">الصفحه الرئيسيه</router-link>
+                  <router-link to="/example3" class="btn btn-primary border-left ">الصفحه الرئيسيه</router-link>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-                  <router-link to="/example" class="btn btn-primary border-left ">الصفحه الرئيسيه</router-link>
+                  <router-link to="/example4" class="btn btn-primary border-left ">الصفحه الرئيسيه</router-link>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
                   <router-link to="/example" class="btn btn-primary border-left ">الصفحه الرئيسيه</router-link>

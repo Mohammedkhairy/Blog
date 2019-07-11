@@ -20,11 +20,19 @@ Vue.use(VueRouter)
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('home-component', require('./components/homeComponent.vue').default);
+Vue.component('home1-component', require('./components/home1Component.vue').default);
+Vue.component('home2-component', require('./components/home2Component.vue').default);
+Vue.component('home3-component', require('./components/home3Component.vue').default);
+Vue.component('home4-component', require('./components/home4Component.vue').default);
 
 const routes = [
   { path: '/', component: require('./components/homeComponent.vue').default },
   { path: '/home', component: require('./components/homeComponent.vue').default },
-  { path: '/example', component: require('./components/ExampleComponent.vue').default }
+  { path: '/example', component: require('./components/ExampleComponent.vue').default },
+  { path: '/example1', component: require('./components/home1Component.vue').default },
+  { path: '/example2', component: require('./components/home2Component.vue').default },
+  { path: '/example3', component: require('./components/home3Component.vue').default },
+  { path: '/example4', component: require('./components/home4Component.vue').default }
   ]
 /**
  * Next, we will create a fresh Vue application instance and attach it to
