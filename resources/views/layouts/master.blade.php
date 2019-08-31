@@ -47,15 +47,6 @@
                   <router-link to="/example" class="btn btn-primary border-left ">الصفحه الرئيسيه</router-link>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-                  <router-link to="/example" class="btn btn-primary border-left ">الصفحه الرئيسيه</router-link>
-        </li>
-        <li class="nav-item d-none d-sm-inline-block">
-                  <router-link to="/example" class="btn btn-primary border-left ">الصفحه الرئيسيه</router-link>
-        </li>
-        <li class="nav-item d-none d-sm-inline-block">
-                  <router-link to="/example" class="btn btn-primary border-left ">الصفحه الرئيسيه</router-link>
-        </li>
-        <li class="nav-item d-none d-sm-inline-block">
           <a href="{{ route('logout') }}" class="btn btn-primary border-left " onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">تسجيل الخروج</a>
           <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
