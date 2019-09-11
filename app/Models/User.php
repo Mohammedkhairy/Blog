@@ -1,10 +1,11 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Support\Str;
 
 class User extends Authenticatable
 {
@@ -36,4 +37,19 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    public function posts()
+    {
+        return $this->hasMany('App\Models\Post');
+    }
+
+    public static function generateApiToken(): string
+    {
+        $str = date('YmdHis', strtotime('+1 week')) . '.' . Str::random(50);
+        for ($i = 0; $i < 5; $i++) {
+            $str = base64_encode($str);
+        }
+        return $str;
+    }
 }

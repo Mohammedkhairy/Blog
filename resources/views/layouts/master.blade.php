@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 
 <head>
   <meta charset="utf-8">
@@ -7,6 +7,7 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <!-- CSRF Token -->
   <meta name="csrf-token" content="{{ csrf_token() }}">
+  <meta name="user" content="{{ auth()->check()? auth()->user() ->id : '' }}">
   <title>{{ config('app.name', 'Laravel') }}</title>
   <!-- Styles -->
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -18,41 +19,29 @@
     <nav class="main-header navbar navbar-expand navbar-white navbar-light border-bottom">
       <!-- Left navbar links -->
       <ul class="navbar-nav">
-        <!-- SEARCH FORM -->
-        <form class="form-inline ml-3">
-          <div class="input-group input-group-sm">
-            <input class="form-control form-control-navbar" type="search" placeholder="بحث" aria-label="Search">
-          </div>
-        </form>
+      
 
-        <li class="nav-item d-none d-sm-inline-block">
-                  <router-link to="/home"    class="btn btn-primary border-left ">الصفحه الرئيسيه</router-link>
+        <li class="nav-item d-none d-sm-inline-block" style="padding:10px">
+                  <router-link to="/home"    class="btn btn-primary">Home</router-link>
         </li>
-        <li class="nav-item d-none d-sm-inline-block">
-                  <router-link to="/example" class="btn btn-primary border-left ">الصفحه الرئيسيه</router-link>
+
+        <li class="nav-item d-none d-sm-inline-block" style="padding:10px">
+                  <router-link to="/category"    class="btn btn-primary">Category</router-link>
         </li>
-        <li class="nav-item d-none d-sm-inline-block">
-                  <router-link to="/example1" class="btn btn-primary border-left ">الصفحه الرئيسيه</router-link>
-        </li>
-        <li class="nav-item d-none d-sm-inline-block">
-                  <router-link to="/example2" class="btn btn-primary border-left ">الصفحه الرئيسيه</router-link>
-        </li>
-        <li class="nav-item d-none d-sm-inline-block">
-                  <router-link to="/example3" class="btn btn-primary border-left ">الصفحه الرئيسيه</router-link>
-        </li>
-        <li class="nav-item d-none d-sm-inline-block">
-                  <router-link to="/example4" class="btn btn-primary border-left ">الصفحه الرئيسيه</router-link>
-        </li>
-        <li class="nav-item d-none d-sm-inline-block">
-                  <router-link to="/example" class="btn btn-primary border-left ">الصفحه الرئيسيه</router-link>
-        </li>
-        <li class="nav-item d-none d-sm-inline-block">
-          <a href="{{ route('logout') }}" class="btn btn-primary border-left " onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">تسجيل الخروج</a>
+        
+        @if(auth()->user())
+        <li class="nav-item d-none d-sm-inline-block" style="padding:10px">
+          <a href="{{ route('logout') }}" class="btn btn-primary" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();"> logout</a>
           <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
             @csrf
           </form>
         </li>
+        @else
+        <li class="nav-item d-none d-sm-inline-block" style="padding:10px">
+                  <a href="/login"    class="btn btn-primary">Login</a>
+        </li>
+        @endif
       </ul>
     </nav>
     <!-- /.navbar -->
