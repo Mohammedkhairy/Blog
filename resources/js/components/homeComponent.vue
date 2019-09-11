@@ -109,9 +109,7 @@ export default {
       editMod: false
     }
   },
-  mounted() {
-    console.log(this.user_id);
-    
+  mounted() {    
     this.getResults();
     this.getCategories();    
   },
@@ -119,7 +117,6 @@ export default {
     getCategories(){
       axios.get('/api/categories')
       .then( (res) => {
-              console.log(res.data);
               this.categories = res.data.data;
       })
       .catch(()=>{ });

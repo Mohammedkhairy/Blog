@@ -64,7 +64,8 @@ trait TraitHelperMethods
             return $this->failJson();
         }
         $data->delete();
-        unlink(Storage::disk('public')->path($data->image));
+        if(Storage::disk('public')->exists($data->image))
+            unlink(Storage::disk('public')->path($data->image));
         return $this->successJson($data);
     }
     
