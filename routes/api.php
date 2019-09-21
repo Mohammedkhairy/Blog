@@ -13,8 +13,7 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::apiResources([
-    'categories' => 'CategoryController' , 
-    'posts' => 'PostController' 
-    ]);
+Route::apiResource('products','ProductController');
+Route::apiResource('custom','CustomFieldController');
+Route::post('upload','ProductController@upload');
 

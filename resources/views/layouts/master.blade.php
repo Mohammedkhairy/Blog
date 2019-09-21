@@ -7,7 +7,6 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <!-- CSRF Token -->
   <meta name="csrf-token" content="{{ csrf_token() }}">
-  <meta name="user" content="{{ auth()->check()? auth()->user() ->id : '' }}">
   <title>{{ config('app.name', 'Laravel') }}</title>
   <!-- Styles -->
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -22,26 +21,10 @@
       
 
         <li class="nav-item d-none d-sm-inline-block" style="padding:10px">
-                  <router-link to="/home"    class="btn btn-primary">Home</router-link>
-        </li>
-
-        <li class="nav-item d-none d-sm-inline-block" style="padding:10px">
-                  <router-link to="/category"    class="btn btn-primary">Category</router-link>
+                  <router-link to="/home"    class="btn btn-primary">All Products</router-link>
         </li>
         
-        @if(auth()->user())
-        <li class="nav-item d-none d-sm-inline-block" style="padding:10px">
-          <a href="{{ route('logout') }}" class="btn btn-primary" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();"> logout</a>
-          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-            @csrf
-          </form>
-        </li>
-        @else
-        <li class="nav-item d-none d-sm-inline-block" style="padding:10px">
-                  <a href="/login"    class="btn btn-primary">Login</a>
-        </li>
-        @endif
+      
       </ul>
     </nav>
     <!-- /.navbar -->
